@@ -17,3 +17,24 @@ it('has a text area and a button', () => {
   expect(wrapped.find('button').length).toEqual(1);
 });
 
+describe('has a text area and button', () => {
+    beforeEach(() => {
+        wrapped.find('textarea').simulate('change', {
+            target: { value: 'new comment' }
+          });
+          wrapped.update();
+    });
+
+    it('new text appears in textarea', () => {
+        expect(wrapped.find('textarea').prop('value')).toEqual('new comment');
+    });
+    
+    it('textarea gets empty after submit', () => {  
+        wrapped.find('form').simulate('submit');
+        wrapped.update();
+        expect(wrapped.find('textarea').prop('value')).toEqual('');
+    });
+});
+
+
+
