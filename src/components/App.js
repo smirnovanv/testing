@@ -1,4 +1,3 @@
-//import { Route } from 'react-router-dom';
 import CommentBox from 'components/CommentBox'
 import CommentList from 'components/CommentList'
 
@@ -10,8 +9,5 @@ function App() {
     </div>
   );
 }
-
-{/* <Route path="/post" component={CommentBox} />
-      <Route path="/" exact component={CommentList} /> */}
 
 export default App;
